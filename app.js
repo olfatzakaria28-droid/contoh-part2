@@ -103,6 +103,34 @@ document.getElementById("pic").value;
 const departemen =
 document.getElementById("departemen").value;
 
+if(qty === ""){
+
+alert("Masukkan Qty");
+
+return;
+
+}
+
+if(pic.trim() === ""){
+
+alert("PIC wajib diisi");
+
+document.getElementById("pic").focus();
+
+return;
+
+}
+
+if(departemen === ""){
+
+alert("Departemen wajib dipilih");
+
+document.getElementById("departemen").focus();
+
+return;
+
+}
+
 const res = await fetch(URL_APPS_SCRIPT,{
 method:"POST",
 body:JSON.stringify({
