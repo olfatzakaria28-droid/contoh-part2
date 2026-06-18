@@ -105,6 +105,8 @@ document.getElementById("departemen").value;
 
 if(qty === ""){
 
+hideLoading();
+
 alert("Masukkan Qty");
 
 return;
@@ -112,6 +114,8 @@ return;
 }
 
 if(pic.trim() === ""){
+
+hideLoading();
 
 alert("PIC wajib diisi");
 
@@ -121,9 +125,11 @@ return;
 
 }
 
-if(departemen === ""){
+if(departemen.trim() === ""){
 
-alert("Departemen wajib dipilih");
+hideLoading();
+
+alert("Departemen wajib diisi");
 
 document.getElementById("departemen").focus();
 
