@@ -103,6 +103,9 @@ document.getElementById("pic").value;
 const departemen =
 document.getElementById("departemen").value;
 
+const keterangan =
+document.getElementById("keterangan").value;
+
 if(qty === ""){
 
 hideLoading();
@@ -137,6 +140,18 @@ return;
 
 }
 
+if(keterangan.trim() === ""){
+
+hideLoading();
+
+alert("Keterangan wajib diisi");
+
+document.getElementById("keterangan").focus();
+
+return;
+
+}
+
 const res = await fetch(URL_APPS_SCRIPT,{
 method:"POST",
 body:JSON.stringify({
@@ -146,7 +161,8 @@ nama:nama,
 qty:qty,
 tipe:tipe,
 pic:pic,
-departemen:departemen
+departemen:departemen,
+keterangan:keterangan
 })
 });
 
